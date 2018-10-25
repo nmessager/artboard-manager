@@ -71,6 +71,8 @@ export function ArrangeArtboards(context) {
   const originalSelection = doc.selectedLayers()
   const artboards = doc.currentPage().artboards()
 
+  if(doc.currentPage().name() == "Symbols") return;
+
   const layoutBounds = MSLayerGroup.groupBoundsForContainer(MSLayerArray.arrayWithLayers(artboards))
   const layoutWidth  = layoutBounds.size.width
   const layoutHeight = layoutBounds.size.height
